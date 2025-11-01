@@ -1,5 +1,7 @@
 from sqlalchemy.orm import Session
-from . import models, schemas
+import models
+import schemas
+
 
 def create_post(db: Session, post: schemas.PostCreate):
     db_post = models.Post(**post.dict())

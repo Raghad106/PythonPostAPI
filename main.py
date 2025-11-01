@@ -1,8 +1,9 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
-from post import database, models, schemas, crud
-from post.database import Base
-
+import models
+import database
+import crud
+import schemas
 
 models.Base.metadata.create_all(bind=database.engine)
 app = FastAPI(title="FastAPI + PostgreSQL API")
